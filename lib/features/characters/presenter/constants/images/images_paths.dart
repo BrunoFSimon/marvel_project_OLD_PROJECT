@@ -10,4 +10,6 @@ class ImagesPaths {
   static const String superman = basePath + 'superman.jpeg';
 
   static const String darkSpider = basePath + 'dark_spider.png';
+
+  static const String detailsBackground = basePath + 'details_background.png';
 }

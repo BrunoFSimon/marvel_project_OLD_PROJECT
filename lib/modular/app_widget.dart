@@ -8,7 +8,16 @@ class AppWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'My Smart App',
-      theme: ThemeData(primarySwatch: Colors.red),
+      theme: ThemeData(
+          primarySwatch: Colors.red,
+          textTheme: const TextTheme(
+            bodyText1: TextStyle(
+              color: Colors.white,
+            ),
+            bodyText2: TextStyle(
+              color: Colors.white,
+            ),
+          )),
     ).modular(); //added by extension
   }
 }

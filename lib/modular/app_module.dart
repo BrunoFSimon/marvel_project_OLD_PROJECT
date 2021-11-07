@@ -28,7 +28,7 @@ class AppModule extends Module {
         Bind((i) => DioClient(i(), i(), i())),
         Bind.singleton((i) => BuildThumbailPath()),
         Bind.singleton((i) => CharactersListStore(i())),
-        Bind.singleton((i) => CharactersDetailsStore(i())),
+        Bind.factory((i) => CharactersDetailsStore(i())),
       ];
 
   @override
@@ -37,7 +37,7 @@ class AppModule extends Module {
             child: (context, args) => const CharactersListPage()),
         ChildRoute(Routes.characterDetails,
             child: (context, args) => CharactersDetailsPage(
-                  characterId: args.data,
+                  id: args.data,
                 )),
       ];
 }
