@@ -1,5 +1,3 @@
-import 'package:marvel_project/features/characters/domain/entities/character.dart';
-
 import 'package:json_annotation/json_annotation.dart';
 import 'package:marvel_project/features/characters/domain/entities/character_details.dart';
 

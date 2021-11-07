@@ -107,7 +107,7 @@ class _CharactersListPage
               child: Observer(
                 builder: (c) {
                   if (controller.characters.isEmpty) {
-                    _buildLoading();
+                    return _buildLoading();
                   }
 
                   return ListView.separated(
