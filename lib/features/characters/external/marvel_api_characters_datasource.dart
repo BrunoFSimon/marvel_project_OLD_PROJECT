@@ -17,12 +17,16 @@ class MarvelAPICharactersDatasource implements CharactersDataSource {
     var dataWraper = CharacterDataWraper.fromJson(result);
 
     return dataWraper.data.results
-        .map((e) => CharacterModel(
+        .map(
+          (e) => CharacterModel(
             e.name,
             e.thumbnail.path +
                 '/portrait_incredible' +
                 '.' +
-                e.thumbnail.extension))
+                e.thumbnail.extension,
+            e.id,
+          ),
+        )
         .toList();
   }
 
@@ -32,10 +36,14 @@ class MarvelAPICharactersDatasource implements CharactersDataSource {
     var dataWraper = CharacterDataWraper.fromJson(result);
 
     return dataWraper.data.results
-        .map((e) => CharacterDetailsModel(
+        .map(
+          (e) => CharacterDetailsModel(
             e.name,
             buildThumbailPath.call(e.thumbnail.path, e.thumbnail.extension),
-            'description'))
+            e.description,
+            e.id,
+          ),
+        )
         .first;
   }
 }

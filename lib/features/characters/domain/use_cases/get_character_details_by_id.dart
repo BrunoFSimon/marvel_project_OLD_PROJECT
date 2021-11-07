@@ -15,14 +15,14 @@ class GetCharacterDetailsByIdImpl implements GetCharactersDetailsById {
   GetCharacterDetailsByIdImpl(this.repository);
 
   @override
-  Future<Either<Failure, CharacterDetails>> call(int characterId) async {
-    if (characterId < 0) {
+  Future<Either<Failure, CharacterDetails>> call(int id) async {
+    if (id < 0) {
       left(InvalidCharacterIdFailure());
     }
-    var option = optionOf(characterId);
+    var option = optionOf(id);
 
     return option.fold(() => left(CharactersAPIFailure()), (v) async {
-      return await repository.getCharacterDetailsById(characterId);
+      return await repository.getCharacterDetailsById(id);
     });
   }
 }

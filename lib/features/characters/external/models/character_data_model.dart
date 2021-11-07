@@ -7,10 +7,12 @@ part 'character_data_model.g.dart';
 class CharacterDataModel {
   final String name;
   final CharacterDataThumbnail thumbnail;
+  final int id;
+  final String description;
 
   factory CharacterDataModel.fromJson(Map<String, dynamic> json) =>
       _$CharacterDataModelFromJson(json);
 
-  CharacterDataModel(this.name, this.thumbnail);
+  CharacterDataModel(this.name, this.thumbnail, this.id, this.description);
   Map<String, dynamic> toJson() => _$CharacterDataModelToJson(this);
 }

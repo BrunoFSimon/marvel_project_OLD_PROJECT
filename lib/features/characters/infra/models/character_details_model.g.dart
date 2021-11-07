@@ -12,11 +12,13 @@ CharacterDetailsModel _$CharacterDetailsModelFromJson(
       json['name'] as String,
       json['imgUrl'] as String,
       json['description'] as String,
+      json['id'] as int,
     );
 
 Map<String, dynamic> _$CharacterDetailsModelToJson(
         CharacterDetailsModel instance) =>
     <String, dynamic>{
+      'id': instance.id,
       'name': instance.name,
       'imgUrl': instance.imgUrl,
       'description': instance.description,

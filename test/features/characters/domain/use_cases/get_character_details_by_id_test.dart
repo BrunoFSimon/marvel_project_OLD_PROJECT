@@ -15,8 +15,8 @@ void main() {
   final useCase = GetCharacterDetailsByIdImpl(repository);
 
   test('Must return a character detail', () async {
-    when(repository.getCharacterDetailsById(any)).thenAnswer(
-        (_) async => right(CharacterDetails('name', 'imgUrl', 'description')));
+    when(repository.getCharacterDetailsById(any)).thenAnswer((_) async =>
+        right(CharacterDetails('name', 'imgUrl', 'description', 0)));
 
     var result = await useCase.call(1);
 

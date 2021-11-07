@@ -1,6 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:marvel_project/features/characters/external/models/character_data_model.dart';
-import 'package:marvel_project/features/characters/infra/models/character_model.dart';
 
 part 'character_data_container.g.dart';
 

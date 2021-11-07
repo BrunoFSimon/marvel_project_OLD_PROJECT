@@ -5,7 +5,7 @@ part 'character_model.g.dart';
 
 @JsonSerializable()
 class CharacterModel extends Character {
-  CharacterModel(String name, String imgUrl) : super(name, imgUrl);
+  CharacterModel(String name, String imgUrl, int id) : super(name, imgUrl, id);
 
   factory CharacterModel.fromJson(Map<String, dynamic> json) =>
       _$CharacterModelFromJson(json);

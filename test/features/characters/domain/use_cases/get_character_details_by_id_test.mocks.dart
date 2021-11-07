@@ -46,8 +46,8 @@ class MockCharactersRepository extends _i1.Mock
           as _i4.Future<_i2.Either<_i5.Failure, List<_i6.Character>>>);
   @override
   _i4.Future<_i2.Either<_i5.Failure, _i7.CharacterDetails>>
-      getCharacterDetailsById(int? characterId) => (super.noSuchMethod(
-              Invocation.method(#getCharacterDetailsById, [characterId]),
+      getCharacterDetailsById(int? id) => (super.noSuchMethod(
+              Invocation.method(#getCharacterDetailsById, [id]),
               returnValue:
                   Future<_i2.Either<_i5.Failure, _i7.CharacterDetails>>.value(
                       _FakeEither_0<_i5.Failure, _i7.CharacterDetails>()))

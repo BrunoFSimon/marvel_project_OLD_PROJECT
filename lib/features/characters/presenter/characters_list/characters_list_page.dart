@@ -5,6 +5,7 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:marvel_project/features/characters/presenter/characters_list/characters_list_store.dart';
 import 'package:marvel_project/features/characters/presenter/constants/images/images_paths.dart';
+import 'package:marvel_project/modular/routes.dart';
 
 class CharactersListPage extends StatefulWidget {
   const CharactersListPage({Key? key}) : super(key: key);
@@ -116,37 +117,42 @@ class _CharactersListPage
                         var item = controller.characters[i];
                         return Padding(
                           padding: const EdgeInsets.only(right: 30.0),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(50),
-                              color: Colors.white.withOpacity(0.2),
-                            ),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                FadeInImage(
-                                    height: 150,
-                                    width: 110,
-                                    alignment: Alignment.centerLeft,
-                                    placeholder: Image.asset(
-                                      ImagesPaths.marvelLogo,
-                                      height: 50,
-                                    ).image,
-                                    image: Image.network(item.imgUrl).image),
-                                Flexible(
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(16.0),
-                                    child: Text(
-                                      item.name,
-                                      style: const TextStyle(
-                                        fontSize: 20,
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.w800,
+                          child: InkWell(
+                            onTap: () => Modular.to.pushNamed(
+                                Routes.characterDetails,
+                                arguments: item.id),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(50),
+                                color: Colors.white.withOpacity(0.2),
+                              ),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  FadeInImage(
+                                      height: 150,
+                                      width: 110,
+                                      alignment: Alignment.centerLeft,
+                                      placeholder: Image.asset(
+                                        ImagesPaths.marvelLogo,
+                                        height: 50,
+                                      ).image,
+                                      image: Image.network(item.imgUrl).image),
+                                  Flexible(
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(16.0),
+                                      child: Text(
+                                        item.name,
+                                        style: const TextStyle(
+                                          fontSize: 20,
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.w800,
+                                        ),
                                       ),
                                     ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
                         );

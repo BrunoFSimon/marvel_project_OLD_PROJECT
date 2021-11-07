@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:marvel_project/app_module.dart';
-import 'package:marvel_project/app_widget.dart';
+import 'modular/app_module.dart';
+import 'modular/app_widget.dart';
 
 void main() {
-  return runApp(ModularApp(
-    module: AppModule(),
-    child: const AppWidget(),
-  ));
+  return runApp(ModularApp(module: AppModule(), child: const AppWidget()));
 }

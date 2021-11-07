@@ -7,6 +7,5 @@ abstract class CharactersRepository {
   Future<Either<Failure, List<Character>>> getCharactersByRange(
       int skip, int take);
 
-  Future<Either<Failure, CharacterDetails>> getCharacterDetailsById(
-      int characterId);
+  Future<Either<Failure, CharacterDetails>> getCharacterDetailsById(int id);
 }
