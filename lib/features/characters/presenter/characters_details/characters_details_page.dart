@@ -56,25 +56,28 @@ class _CharactersDetailsPage
                 } else {
                   var item = controller.characterDetails!;
                   return Center(
-                    child: Column(mainAxisSize: MainAxisSize.min, children: [
-                      Card(
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Image.network(
-                            item.imgUrl,
-                            fit: BoxFit.fitHeight,
+                    child: Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Column(mainAxisSize: MainAxisSize.min, children: [
+                        Card(
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Image.network(
+                              item.imgUrl,
+                              fit: BoxFit.fitHeight,
+                            ),
                           ),
                         ),
-                      ),
-                      const Divider(),
-                      MarvelTitle(text: item.name),
-                      const Divider(
-                        height: 5,
-                      ),
-                      Text(item.description.isEmpty
-                          ? 'No description found.'
-                          : item.description),
-                    ]),
+                        const Divider(),
+                        MarvelTitle(text: item.name),
+                        const Divider(
+                          height: 5,
+                        ),
+                        Text(item.description.isEmpty
+                            ? 'No description found.'
+                            : item.description),
+                      ]),
+                    ),
                   );
                 }
               },
