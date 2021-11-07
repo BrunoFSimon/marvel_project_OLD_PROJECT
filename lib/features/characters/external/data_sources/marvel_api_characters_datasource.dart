@@ -42,6 +42,7 @@ class MarvelAPICharactersDatasource implements CharactersDataSource {
             buildThumbailPath.call(e.thumbnail.path, e.thumbnail.extension),
             e.description,
             e.id,
+            e.comics.items.map((e) => e.name).toList(),
           ),
         )
         .first;

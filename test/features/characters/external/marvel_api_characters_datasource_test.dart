@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:marvel_project/features/characters/external/marvel_api_characters_datasource.dart';
+import 'package:marvel_project/features/characters/external/data_sources/marvel_api_characters_datasource.dart';
 import 'package:marvel_project/features/characters/external/utils/build_thumbnail_path.dart';
 import 'package:marvel_project/features/characters/infra/http_client/http_client.dart';
 import 'package:marvel_project/features/characters/infra/models/character_details_model.dart';

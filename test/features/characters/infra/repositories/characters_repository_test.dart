@@ -36,8 +36,8 @@ void main() {
   });
 
   test('Should return a CharacterDetailModel', () async {
-    when(dataSopurce.getDetailsById(any)).thenAnswer(
-        (_) async => CharacterDetailsModel('name', 'imgUrl', 'description', 0));
+    when(dataSopurce.getDetailsById(any)).thenAnswer((_) async =>
+        CharacterDetailsModel('name', 'imgUrl', 'description', 0, []));
 
     var result = await repository.getCharacterDetailsById(1);
 

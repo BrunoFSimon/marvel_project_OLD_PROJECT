@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:marvel_project/features/characters/domain/use_cases/get_character_details_by_id.dart';
 import 'package:marvel_project/features/characters/domain/use_cases/get_characters_by_range.dart';
-import 'package:marvel_project/features/characters/external/marvel_api_characters_datasource.dart';
+import 'package:marvel_project/features/characters/external/data_sources/marvel_api_characters_datasource.dart';
 import 'package:marvel_project/features/characters/external/utils/build_thumbnail_path.dart';
 import 'package:marvel_project/features/characters/infra/http_client/http_client.dart';
 import 'package:marvel_project/features/characters/infra/repositories/characters_repository.dart';

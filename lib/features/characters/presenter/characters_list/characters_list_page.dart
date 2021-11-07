@@ -5,6 +5,7 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:marvel_project/features/characters/presenter/characters_list/characters_list_store.dart';
 import 'package:marvel_project/features/characters/presenter/constants/images/images_paths.dart';
+import 'package:marvel_project/features/shared/widgets/marvel_app_bar.dart';
 import 'package:marvel_project/features/shared/widgets/marvel_loading.dart';
 import 'package:marvel_project/modular/routes.dart';
 
@@ -65,14 +66,9 @@ class _CharactersListPage
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.black,
-        appBar: AppBar(
-          title: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 130),
-            child: Image.asset(
-              ImagesPaths.marvelLogoNoBackground,
-            ),
-          ),
-        ),
+        appBar: const MarvelAppBar(),
+        bottomNavigationBar: const Text('Tap a character for details',
+            textAlign: TextAlign.center, style: TextStyle()),
         body: Stack(
           children: [
             _buildBackgroundCarousel(),

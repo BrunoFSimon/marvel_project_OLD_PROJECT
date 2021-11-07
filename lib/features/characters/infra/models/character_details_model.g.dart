@@ -13,6 +13,7 @@ CharacterDetailsModel _$CharacterDetailsModelFromJson(
       json['imgUrl'] as String,
       json['description'] as String,
       json['id'] as int,
+      (json['comicsNames'] as List<dynamic>).map((e) => e as String).toList(),
     );
 
 Map<String, dynamic> _$CharacterDetailsModelToJson(
@@ -22,4 +23,5 @@ Map<String, dynamic> _$CharacterDetailsModelToJson(
       'name': instance.name,
       'imgUrl': instance.imgUrl,
       'description': instance.description,
+      'comicsNames': instance.comicsNames,
     };
