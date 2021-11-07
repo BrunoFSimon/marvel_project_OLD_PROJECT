@@ -5,6 +5,7 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:marvel_project/features/characters/presenter/characters_list/characters_list_store.dart';
 import 'package:marvel_project/features/characters/presenter/constants/images/images_paths.dart';
+import 'package:marvel_project/features/shared/widgets/marvel_loading.dart';
 import 'package:marvel_project/modular/routes.dart';
 
 class CharactersListPage extends StatefulWidget {
@@ -59,33 +60,6 @@ class _CharactersListPage
     );
   }
 
-  Widget _buildLoading() {
-    var animationController = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 1000),
-    );
-
-    animationController.addListener(() {
-      if (animationController.isCompleted) {
-        animationController.reverse();
-      } else if (animationController.isDismissed) {
-        animationController.forward();
-      }
-    });
-
-    var animation = Tween(
-      begin: 0.0,
-      end: 1.0,
-    ).animate(animationController);
-
-    animationController.forward();
-
-    return FadeTransition(
-      opacity: animation,
-      child: Center(child: Image.asset(ImagesPaths.marvelLogo, width: 200)),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -107,7 +81,7 @@ class _CharactersListPage
               child: Observer(
                 builder: (c) {
                   if (controller.characters.isEmpty) {
-                    return _buildLoading();
+                    return MarvelLoading(vsync: this);
                   }
 
                   return ListView.separated(
@@ -135,7 +109,6 @@ class _CharactersListPage
                                       alignment: Alignment.centerLeft,
                                       placeholder: Image.asset(
                                         ImagesPaths.marvelLogo,
-                                        height: 50,
                                       ).image,
                                       image: Image.network(item.imgUrl).image),
                                   Flexible(
